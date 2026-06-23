@@ -18,3 +18,4 @@ export async function getProdutoById(id) {
 
   return res.json();
 }
+

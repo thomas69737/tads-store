@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getProdutoPorId } from "../../services/api";
+import { getProdutoById } from "../services/api";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -13,7 +13,7 @@ export default function ProductDetail() {
   useEffect(() => {
     async function carregarProduto() {
       try {
-        const data = await getProdutoPorId(id);
+        const data = await getProdutoById(id);
         setProduto(data);
       } catch (err) {
         setErro(err.message);
