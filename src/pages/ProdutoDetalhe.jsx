@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProdutoById } from "../services/api";
+import { useParams, useNavigate } from "react-router-dom";
+import { getProdutoPorId } from "../../services/api";
 
-export default function ProdutoDetalhe() {
+export default function ProductDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [produto, setProduto] = useState(null);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState(null);
 
   useEffect(() => {
-    async function carregar() {
+    async function carregarProduto() {
       try {
-        const data = await getProdutoById(id);
+        const data = await getProdutoPorId(id);
         setProduto(data);
       } catch (err) {
         setErro(err.message);
@@ -21,21 +22,77 @@ export default function ProdutoDetalhe() {
       }
     }
 
-    carregar();
+    carregarProduto();
   }, [id]);
 
-  if (loading) return <p>Carregando produto...</p>;
-  if (erro) return <p>Erro: {erro}</p>;
+  if (loading) {
+    return <p style={{ textAlign: "center" }}>Carregando produto...</p>;
+  }
+
+  if (erro) {
+    return <p style={{ textAlign: "center", color: "red" }}>Erro: {erro}</p>;
+  }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>{produto.title}</h1>
-      <img
-        src={produto.thumbnail}
-        style={{ width: "300px" }}
-      />
-      <p>{produto.description}</p>
-      <h2>R$ {produto.price}</h2>
+    <div
+      style={{
+        maxWidth: "900px",
+        margin: "40px auto",
+        padding: "20px",
+        display: "flex",
+        gap: "30px",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
+      {/* IMAGEM */}
+      <div style={{ flex: "1" }}>
+        <img
+          src={produto.thumbnail}
+          alt={produto.title}
+          style={{
+            width: "100%",
+            borderRadius: "12px",
+            boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+          }}
+        />
+      </div>
+
+      {/* INFO */}
+      <div style={{ flex: "1" }}>
+        <h1 style={{ marginBottom: "10px", fontSize: "24px" }}>
+          {produto.title}
+        </h1>
+
+        <p style={{ color: "#666", marginBottom: "15px" }}>
+          {produto.description}
+        </p>
+
+        <p
+          style={{
+            fontSize: "22px",
+            fontWeight: "bold",
+            color: "#2ecc71",
+            marginBottom: "20px",
+          }}
+        >
+          R$ {produto.price}
+        </p>
+
+        <button
+          onClick={() => navigate(-1)}
+          style={{
+            padding: "10px 15px",
+            background: "#111",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+          }}
+        >
+          Voltar
+        </button>
+      </div>
     </div>
   );
 }
