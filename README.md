@@ -1,16 +1,63 @@
-# React + Vite
+# 🛒 TADS Store - FÉ EM DEUS!!!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de loja virtual desenvolvido em React como parte da disciplina de Desenvolvimento Front-End 2.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demonstração - NO AR, GRAÇAS A DEUS!!!
 
-## React Compiler
+🔗 Acesse o projeto online:  
+https://tads-store-xi.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Sobre o projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+A TADS Store é uma aplicação web de e-commerce desenvolvida com React, utilizando consumo de API, componentização, roteamento SPA e autenticação de usuário.
+
+---
+
+## Tecnologias utilizadas
+
+- React
+- Vite
+- React Router DOM
+- Context API
+- JavaScript (ES6+)
+- CSS inline / básico
+- API DummyJSON
+
+---
+
+## Funcionalidades
+
+### Componentização
+- Layout reutilizável
+- Cabeçalho e rodapé
+- Vitrine de produtos
+- Card de produto
+
+### Consumo de API
+- Listagem de produtos via DummyJSON
+- Página de detalhe do produto
+- Loading e tratamento de erro
+
+### Navegação (SPA)
+- Página inicial (vitrine)
+- Página de detalhe `/produto/:id`
+- Página 404 (se aplicável)
+
+### Autenticação
+- Login simulado (usuário: `aluno` / senha: `1234`)
+- Context API para controle de sessão
+- Persistência com localStorage
+- Rota protegida (`/minha-conta`)
+- Logout funcional
+
+---
+
+## Usuário de teste
+
+- Usuário: **aluno**
+- Senha: **1234**
+
