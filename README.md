@@ -1,21 +1,16 @@
-# Papelaria Coração de Tinta
+# React + Vite
 
-## Tema
-Site básico institucional da Papelaria Coração de Tinta.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Descrição
-Site desenvolvido para apresentar brevemente a papelaria, seus produtos e permitir contato com clientes.
+Currently, two official plugins are available:
 
-## Tecnologias Utilizadas
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Funcionalidades em JavaScript
-- Validação de formulário
-- Mensagem de feedback personalizada
-- Mostrar e ocultar detalhes dos produtos
+## React Compiler
 
-## Como executar o projeto
-Basta abrir o arquivo `index.html` em qualquer navegador.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
