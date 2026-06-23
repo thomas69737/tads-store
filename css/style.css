@@ -1,0 +1,26 @@
+/* Inicio do CSS interno */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+section h2 {
+    color: #dc3545;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
